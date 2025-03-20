@@ -1,13 +1,24 @@
 def establish_airflow_connections():
-        
-    from datetime import datetime
+    
+
+    import os
+
+    # Get the directory of the current script
+    dag_folder = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the full path to the config file
+    config_path = os.path.join(dag_folder, 'config.yaml')
+    # Get the current file's absolute path
+
     import json
+    import yaml
+    from datetime import datetime
     from airflow.models import Connection
     from airflow.settings import Session
-    import yaml
+
 
     # Load the YAML config file
-    with open("config.yaml", "r") as file:
+    with open(config_path, "r") as file:
         config = yaml.safe_load(file)
 
     # Access Databricks credentials
@@ -69,3 +80,4 @@ def establish_airflow_connections():
 
 
     session.close()
+

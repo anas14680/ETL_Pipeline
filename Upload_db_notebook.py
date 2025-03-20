@@ -3,9 +3,19 @@ def upload_db_nb():
     import base64
     import requests
     import yaml
+    import os
+
+    # Get the directory of the current script
+    dag_folder = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the full path to the config file
+    config_path = os.path.join(dag_folder, 'config.yaml')
+    file_path   = os.path.join(dag_folder, 'transform_nppes_data.ipynb')
+
+
 
     # Load the YAML config file
-    with open("config.yaml", "r") as file:
+    with open(config_path, "r") as file:
         config = yaml.safe_load(file)
 
     # Access Databricks credentials
@@ -13,7 +23,6 @@ def upload_db_nb():
     access_token = config["credentials"]["databricks"]["token"]
 
     # File and destination path
-    file_path = "Transform_NPPES_data.ipynb"
     destination_path = "/Workspace/Users/mohammadanas109@gmail.com/transform_nppes_data"
 
     # Read the notebook file

@@ -1,8 +1,13 @@
 def upload_lambda():
-        
+    
+    import os
+
     import boto3
     from botocore.exceptions import ClientError  # Import ClientError
 
+
+    dag_folder = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(dag_folder)
 
     # Initialize the Lambda client
     lambda_client = boto3.client('lambda')
@@ -10,7 +15,7 @@ def upload_lambda():
 
     # Define your variables
     layer_name = 'requestlayer'
-    zip_file = 'python.zip'
+    zip_file =  'python.zip'
     lambda_func = 'lambda_function.zip'
     lambda_function_name = "extractnppesdataunzipit"  # Replace with your desired Lambda function name
     role_arn = "arn:aws:iam::221082173339:role/Lambda-access-s3"  # Replace with the ARN of your IAM role
@@ -55,6 +60,7 @@ def upload_lambda():
 
 
 
+
     # Read the zipped file
     with open(lambda_func, 'rb') as zip_file:
         zip_file_content = zip_file.read()
@@ -78,3 +84,5 @@ def upload_lambda():
     )
 
 
+
+upload_lambda()
