@@ -1,0 +1,8 @@
+credentials:
+  databricks:
+    instance: <databricks instance>
+    token: <databricks access token>
+  aws:
+    access_key: <aws key>
+    secret_key: <aws secret key>
+    region: <aws region id>
