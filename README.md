@@ -28,7 +28,7 @@ To begin the setup on your machine, we need to install relevant packages, listed
 
 ```pip install requirements.txt```
 
-Once the packages have been installed, the AWS and Databricks access tokens need to be created and replaced in the `config.yaml` file. Finally the following commands should be run in the terminal to trigger the DAG pipeline. 
+This will install all the packages including Apache Airflow into our local machine. All the files need to be placed inside `airflow/dags` folder, as airflow only registers DAGS placed in this directory. This directory will appear automatically in your machine once airflow is installed. After this, the AWS and Databricks access tokens need to be created and replaced in the `config.yaml` file. Finally the following commands should be run in the terminal to trigger the DAG pipeline. 
 
 This command will schedule the DAG from local machine to the airflow server. 
 
