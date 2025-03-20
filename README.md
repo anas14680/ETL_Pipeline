@@ -14,4 +14,6 @@ The purpose of this project is to download nppes data from their CMS website. Th
 The file is downloaded into an s3 bucket. We use AWS lambda function to unzip the file inside the s3 bucket. We use AWS lambda as these files are large and require alot of compute power. Given that AWS is serverless compute instance, it automatically manages the server and compute power required. A databricks notebook is established to read these datasets from S3, perform relevant transformation to create a concise table containing all the information about healthcare providers such as their specialty, address and their names. This table is then loaded into databricks unity catalog for analytical use cases. 
 
 
+## Set up 
 
+To begin the setup on your machine, we need to install relevant packages, listed in the `requirements.txt` file on our local machine. 
