@@ -16,4 +16,8 @@ The file is downloaded into an s3 bucket. We use AWS lambda function to unzip th
 
 ## Set up 
 
-To begin the setup on your machine, we need to install relevant packages, listed in the `requirements.txt` file on our local machine. 
+To begin the setup on your machine, we need to install relevant packages, listed in the `requirements.txt` file on our local machine. Please the following bash script. 
+
+```pip install requirements.txt```
+
+Once the packages have been installed, the AWS and Databricks access tokens need to be created and replaced in the `config.yaml` file.
